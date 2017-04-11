@@ -22,6 +22,7 @@ import { ProductsComponent } from './products/products.component';
 
 import { AUTH_PROVIDERS } from './auth.service';
 import { LoggedInGuard } from './logged-in.guard';
+import { LocationStrategy, HashLocationStrategy } from "@angular/common";
 
 const routes: Routes = [
   // basic routes
@@ -66,10 +67,9 @@ const routes: Routes = [
     ProductsModule
   ],
   providers: [
-    // uncomment this for "hash-bang" routing
-    // { provide: LocationStrategy, useClass: HashLocationStrategy }
     AUTH_PROVIDERS,
-    LoggedInGuard
+    LoggedInGuard,
+    { provide: LocationStrategy, useClass: HashLocationStrategy }
   ],
   bootstrap: [AppComponent]
 })
