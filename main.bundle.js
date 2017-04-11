@@ -37,7 +37,7 @@ var AuthService = (function () {
         return this.getUser() !== null;
     };
     AuthService = __decorate([
-        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["c" /* Injectable */])(), 
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["e" /* Injectable */])(), 
         __metadata('design:paramtypes', [])
     ], AuthService);
     return AuthService;
@@ -217,6 +217,7 @@ var AppComponent = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__products_products_component__ = __webpack_require__(330);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__auth_service__ = __webpack_require__(216);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__logged_in_guard__ = __webpack_require__(509);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__angular_common__ = __webpack_require__(71);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -227,6 +228,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
 
 
 
@@ -285,10 +287,9 @@ var AppModule = (function () {
                 __WEBPACK_IMPORTED_MODULE_5__products_products_module__["b" /* ProductsModule */]
             ],
             providers: [
-                // uncomment this for "hash-bang" routing
-                // { provide: LocationStrategy, useClass: HashLocationStrategy }
                 __WEBPACK_IMPORTED_MODULE_13__auth_service__["a" /* AUTH_PROVIDERS */],
-                __WEBPACK_IMPORTED_MODULE_14__logged_in_guard__["a" /* LoggedInGuard */]
+                __WEBPACK_IMPORTED_MODULE_14__logged_in_guard__["a" /* LoggedInGuard */],
+                { provide: __WEBPACK_IMPORTED_MODULE_15__angular_common__["a" /* LocationStrategy */], useClass: __WEBPACK_IMPORTED_MODULE_15__angular_common__["b" /* HashLocationStrategy */] }
             ],
             bootstrap: [__WEBPACK_IMPORTED_MODULE_6__app_component__["a" /* AppComponent */]]
         }), 
@@ -398,7 +399,7 @@ var LoggedInGuard = (function () {
         return isLoggedIn;
     };
     LoggedInGuard = __decorate([
-        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["c" /* Injectable */])(), 
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["e" /* Injectable */])(), 
         __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__auth_service__["b" /* AuthService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_1__auth_service__["b" /* AuthService */]) === 'function' && _a) || Object])
     ], LoggedInGuard);
     return LoggedInGuard;
@@ -574,7 +575,7 @@ var ProductComponent = (function () {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__(83);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__(71);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__(103);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__products_component__ = __webpack_require__(330);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__product_product_component__ = __webpack_require__(513);
@@ -622,7 +623,7 @@ var ProductsModule = (function () {
                 __WEBPACK_IMPORTED_MODULE_6__more_info_more_info_component__["a" /* MoreInfoComponent */]
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1__angular_common__["a" /* CommonModule */],
+                __WEBPACK_IMPORTED_MODULE_1__angular_common__["c" /* CommonModule */],
                 __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* RouterModule */]
             ]
         }), 
